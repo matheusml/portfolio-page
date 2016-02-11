@@ -4,18 +4,40 @@ var concat = require('gulp-concat');
 var minifyCSS = require('gulp-minify-css');
 var ngAnnotate = require('gulp-ng-annotate');
 var connect = require('gulp-connect');
-var files = ['public/index.html'];
+
+gulp.task('default', ['connect', 'watch', 'bower', 'js', 'css']);
 
 gulp.task('files', function() {
-  gulp.src(files).pipe(connect.reload());
+  	gulp.src('public/**/*').pipe(connect.reload());
 });
 
 gulp.task('watch', function() {
-  gulp.watch(files, ['files']);
+  	gulp.watch('public/**/*', ['files']);
 });
 
 gulp.task('connect', function() {
-  connect.server({ root: 'public', livereload: true });
+  	connect.server({ root: 'public', livereload: true });
 });
 
-gulp.task('default', ['connect', 'watch']);
+gulp.task('js', function() {
+    return gulp.src(['public/js/**/*.js'])
+        .pipe(concat('bundle.min.js'))
+        .pipe(ngAnnotate())
+        .pipe(uglify())
+        .pipe(gulp.dest('public/dist'));
+});
+
+gulp.task('bower', function() {
+    return gulp.src(['public/bower_components/angular/angular.min.js',
+                     'public/bower_components/angular-route/angular-route.min.js'])
+        .pipe(concat('bower.min.js'))
+        .pipe(gulp.dest('public/dist'));
+});
+
+gulp.task('css', function(){
+    return gulp.src(['public/css/bootstrap.min.css',
+                     'public/css/styles.css'])
+        .pipe(minifyCSS())
+        .pipe(concat('style.min.css'))
+        .pipe(gulp.dest('public/dist'))
+});

@@ -5,13 +5,47 @@
 
     <title>Matheus Lima | JavaScript Lead Developer @ Concrete Solutions</title>
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="dist/style.min.css">
 
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
 
-  <body>
+  <body ng-app="app">
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="/" class="navbar-brand">Matheus Lima</a>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="/blog">Blog</a>
+            </li>
+            <li>
+              <a href="/github">GitHub</a>
+            </li>
+            <li>
+              <a href="/talks">Talks</a>
+            </li>
+            <li>
+              <a href="/linkedin" target="_blank">LinkedIn</a>
+            </li>
+            <li>
+              <a href="/youtube">YouTube</a>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container" ng-view></div>
+    </div>
+    <script src="dist/bower.min.js"></script>
+    <script src="dist/bundle.min.js"></script>
   </body>
 </html>
