@@ -5,7 +5,7 @@ var minifyCSS = require('gulp-minify-css');
 var ngAnnotate = require('gulp-ng-annotate');
 var connect = require('gulp-connect');
 
-gulp.task('default', ['connect', 'watch', 'bower', 'js', 'css']);
+gulp.task('default', ['connect', 'watch', 'css']);
 
 gulp.task('files', function() {
   	gulp.src('public/**/*').pipe(connect.reload());
@@ -36,7 +36,7 @@ gulp.task('bower', function() {
 
 gulp.task('css', function(){
     return gulp.src(['public/css/bootstrap.min.css',
-                     'public/css/styles.css'])
+                     'public/css/*.css'])
         .pipe(minifyCSS())
         .pipe(concat('style.min.css'))
         .pipe(gulp.dest('public/dist'))
