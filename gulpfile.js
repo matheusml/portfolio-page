@@ -5,14 +5,15 @@ var minifyCSS = require('gulp-minify-css');
 var ngAnnotate = require('gulp-ng-annotate');
 var connect = require('gulp-connect');
 
-gulp.task('default', ['connect', 'watch', 'css']);
+gulp.task('default', ['connect', 'watch', 'build']);
+gulp.task('build', ['css']);
 
 gulp.task('files', function() {
   	gulp.src('public/**/*').pipe(connect.reload());
 });
 
 gulp.task('watch', function() {
-  	gulp.watch('public/**/*', ['files']);
+  	gulp.watch(['public/**/*', '!public/dist/*'], ['build', 'files']);
 });
 
 gulp.task('connect', function() {
