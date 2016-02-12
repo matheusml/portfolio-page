@@ -1,0 +1,15 @@
+footer {
+	background-color: #333;
+	text-align: center;
+	margin-top: 20px;
+	padding: 20px;
+	color: #f5f5f5;
+}
+
+.avatar {
+	width: 10%;
+}
+
+.talk {
+	margin-top: 20px;
+}
