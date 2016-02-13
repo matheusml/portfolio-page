@@ -13,3 +13,11 @@ footer {
 .talk {
 	margin-top: 20px;
 }
+
+a {
+	text-decoration: none !important;
+}
+
+.social-media-item:hover {
+	opacity: 0.7;
+}
