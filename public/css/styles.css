@@ -11,9 +11,17 @@ footer {
 	   width: 10%;
     }
 }
+
 @media (max-width: 699px) {
     .avatar {
 	   width: 68px;
+    }
+}
+
+
+@media (max-width: 699px) {
+    .container {
+	   padding: 30px;
     }
 }
 
@@ -27,4 +35,20 @@ a {
 
 .social-media-item:hover {
 	opacity: 0.7;
+}
+
+@media (min-width: 700px) {
+    .social-media-image {
+        width: 4%;
+    }
+}
+
+@media (max-width: 699px) {
+    .social-media-image {
+        width: 30px;
+    }
+}
+
+body {
+    font-size: 15px;
 }
