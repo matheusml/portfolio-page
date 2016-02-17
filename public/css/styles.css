@@ -6,8 +6,15 @@ footer {
 	color: #f5f5f5;
 }
 
-.avatar {
-	width: 10%;
+@media (min-width: 700px) {
+    .avatar {
+	   width: 10%;
+    }
+}
+@media (max-width: 699px) {
+    .avatar {
+	   width: 68px;
+    }
 }
 
 .talk {
