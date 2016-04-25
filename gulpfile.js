@@ -28,13 +28,6 @@ gulp.task('js', function() {
         .pipe(gulp.dest('public/dist'));
 });
 
-gulp.task('bower', function() {
-    return gulp.src(['public/bower_components/angular/angular.min.js',
-                     'public/bower_components/angular-route/angular-route.min.js'])
-        .pipe(concat('bower.min.js'))
-        .pipe(gulp.dest('public/dist'));
-});
-
 gulp.task('css', function(){
     return gulp.src(['public/css/bootstrap.min.css',
                      'public/css/*.css'])
