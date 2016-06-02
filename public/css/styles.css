@@ -52,3 +52,22 @@ a {
 body {
     font-size: 15px;
 }
+
+@media (max-width: 699px) {
+  .talk-photo {
+    max-width: 300px;
+  }
+}
+
+
+@media (min-width: 700px) {
+  .talk-photo {
+    max-width: 500px;
+  }
+}
+
+.talk-photo {
+  height: auto;
+  margin-bottom: 10px;
+  box-shadow: 1px 1px 5px #888888;
+}
