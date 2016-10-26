@@ -16,10 +16,6 @@
     "gulp-connect": "~2.3.1"
   },
   "scripts": {
-    "prestart": "npm install",
-    "start": "gulp",
-    "pretest": "npm install",
-    "preupdate-webdriver": "npm install",
-    "update-webdriver": "webdriver-manager update"
+    "start": "gulp"
   }
 }
